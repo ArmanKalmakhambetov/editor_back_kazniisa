@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "username": "arman458792@gmail.com",
+    "password": "ara458792",
+    "recepties": [
+      {
+        "id": "1",
+        "receptName": "Паста",
+        "receptTags": [
+          "Курица",
+          "Макароны",
+          "Сливки",
+          "Ужин",
+          "Обед",
+          "30 мин"
+        ],
+        "receptIngredients": [
+          { "id": "1", "ingName": "Курица", "ingWeight": 300, "ingCount": 1 },
+          { "id": "2", "ingName": "Макароны", "ingWeight": 250, "ingCount": 1 },
+          { "id": "3", "ingName": "Сливки", "ingWeight": 100, "ingCount": 1 },
+          { "id": "4", "ingName": "Масло", "ingWeight": 50, "ingCount": 1 },
+          { "id": "5", "ingName": "Соль", "ingWeight": 10, "ingCount": 1 },
+          { "id": "6", "ingName": "Перец", "ingWeight": 10, "ingCount": 1 },
+          { "id": "7", "ingName": "Лук", "ingWeight": 1, "ingCount": 1 }
+        ],
+        "receptTime": 30,
+        "receptDescription": "Курицу нарезать не крупно, нарезать лук, ...",
+        "receptImage": "https://lifehacker.ru/wp-content/uploads/2018/04/Pasta_1523360590.jpg"
+      },
+      {
+        "id": "2",
+        "receptName": "Яичница",
+        "receptTags": ["Яица", "Завтрак", "15 мин"],
+        "receptIngredients": [
+          { "id": "1", "ingName": "Яица", "ingWeight": 1, "ingCount": 4 },
+          { "id": "2", "ingName": "Лук", "ingWeight": 1, "ingCount": 0.5 },
+          { "id": "3", "ingName": "Масло", "ingWeight": 50, "ingCount": 1 },
+          { "id": "4", "ingName": "Масло", "ingWeight": 50, "ingCount": 1 },
+          { "id": "5", "ingName": "Соль", "ingWeight": 10, "ingCount": 1 }
+        ],
+        "receptTime": 15,
+        "receptDescription": "Нарезать лук мелко, разбить 4 яица в чашку размешать, обжарить лук до золотистой корочки, вылить размешанную смесь в сковородку, жарить до приготовления",
+        "receptImage": "https://s1.eda.ru/StaticContent/Photos/2/ea/2ea2a5739495455ebe732e8c42cbe453.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "username": "test",
+    "password": "test",
+    "recepties": [
+      {
+        "id": "1",
+        "receptName": "test",
+        "receptTags": ["test"],
+        "receptIngredients": [
+          { "id": "1", "ingName": "test", "ingWeight": 300, "ingCount": 1 }
+        ],
+        "receptTime": 30,
+        "receptDescription": "test",
+        "receptImage": "https://s1.eda.ru/StaticContent/Photos/2/ea/2ea2a5739495455ebe732e8c42cbe453.jpg"
+      }
+    ]
+  }
+]

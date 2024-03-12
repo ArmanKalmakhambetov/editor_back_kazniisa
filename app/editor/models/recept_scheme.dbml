@@ -1,0 +1,45 @@
+Table role {
+    id bigint [pk]
+    name varchar
+}
+
+Table users {
+    id bigint [pk]
+    username varchar
+    password varchar
+    role_id bigint
+    email varchar
+}
+
+Table recepties {
+    id bigint [pk]
+    receptName varchar
+    receptTime int
+    receptDescription varchar
+    receptImage varchar
+    user_id bigint
+}
+
+Table recept_tags {
+    id bigint [pk]
+    tagName varchar
+}
+
+Table recept_ingredients {
+    id bigint [pk]
+    ingName varchar
+    ingWeight int
+    ingCount float
+    recept_id bigint
+}
+
+Table recept_tags_map {
+    recept_id bigint
+    tag_id bigint
+}
+
+Ref: users.role_id > role.id
+Ref: recepties.user_id > users.id
+Ref: recept_ingredients.recept_id > recepties.id
+Ref: recept_tags_map.recept_id > recepties.id
+Ref: recept_tags_map.tag_id > recept_tags.id
