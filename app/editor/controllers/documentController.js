@@ -48,11 +48,10 @@ async function getDocumentById(req, res) {
     try {
         const documentId = req.params.id;
         console.log(documentId)
-        const document = await Document.findAll({
+        const document = await Document.findOne({
             where: {
-                id: {
-                    [Op.eq]: documentId
-                }
+                id: documentId
+                
             },
         })
         return res.status(200).json(document);
@@ -98,7 +97,7 @@ async function updateDocument(req, res) {
 
         // Обновляем документ по идентификатору
         const [updatedRowCount] = await Document.update({
-            document_name: req.body.document_name,
+            
             document_content: req.body.document_content
         }, {
             where: {

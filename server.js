@@ -1,8 +1,10 @@
 
 const path = require("path");
+const fs = require('fs');
 const express=require('express')
 const logger=require('morgan') // для логирования кто к нам по какому запросу стучался
-
+const swaggerFile = JSON.parse(fs.readFileSync('./app/swagger-output.json'))
+const swaggerUi = require("swagger-ui-express")
 const multer=require('multer') // для formdata
 
 const passport =require('passport')
@@ -33,11 +35,12 @@ app.use(express.static(path.join(__dirname)));
 //     res.status(200).send('POST /api works | Success!')
 // })
 app.use(passport.initialize());
+app.use('/api-doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 app.use(require('./app/auth/routes'))
 app.use(require('./app/editor/routes/routes'))
-app.use(require('./app/banner/routes'))
-app.use(require('./app/revise/routes'))
+// app.use(require('./app/banner/routes'))
+// app.use(require('./app/revise/routes'))
 // app.use(require('./app/region/routes'))
 // app.use(require('./app/skills/routes'))
 // app.use(require('./app/employment-type/routes'))
