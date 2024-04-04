@@ -6,40 +6,55 @@ Table role {
 Table users {
     id bigint [pk]
     username varchar
+    fullname varchar
     password varchar
     role_id bigint
     email varchar
 }
 
-Table recepties {
+Table posts {
     id bigint [pk]
-    receptName varchar
-    receptTime int
-    receptDescription varchar
-    receptImage varchar
+    title varchar
+    readTime int
+    countOfView int
+    datePublished date
+    tags varchar
+    content varchar
+}
+
+Table vacancy {
+    id bigint [pk]
+    title varchar
+    experience varchar
+    skills varchar
+    content varchar
+    
+
+}
+
+Table companies {
+    id bigint [pk]
+    name varchar
+    address varchar
+
+}
+
+Table users_posts {
     user_id bigint
+    post_id bigint
 }
 
-Table recept_tags {
-    id bigint [pk]
-    tagName varchar
+Table companies_vacancy {
+    company_id bigint
+    vacancy_id bigint
 }
 
-Table recept_ingredients {
-    id bigint [pk]
-    ingName varchar
-    ingWeight int
-    ingCount float
-    recept_id bigint
-}
 
-Table recept_tags_map {
-    recept_id bigint
-    tag_id bigint
-}
+
 
 Ref: users.role_id > role.id
-Ref: recepties.user_id > users.id
-Ref: recept_ingredients.recept_id > recepties.id
-Ref: recept_tags_map.recept_id > recepties.id
-Ref: recept_tags_map.tag_id > recept_tags.id
+Ref: users_posts.user_id > users.id
+Ref: users_posts.post_id > posts.id
+Ref: companies_vacancy.company_id > companies.id
+Ref: companies_vacancy.vacancy_id > vacancy.id
+
