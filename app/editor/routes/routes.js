@@ -1,6 +1,6 @@
 const express=require('express');
 const { getAllUserProjects, createProject, updateProject, deleteProject, getProjectById } = require('../controllers/projectController');
-const { getAllProjectDocuments, createDocument, getDocumentById, updateDocument, deleteDocument } = require('../controllers/documentController');
+const { getAllProjectDocuments, createDocument, getDocumentById, updateDocument, deleteDocument, createDocumentByTemplate, getAllAdminDocuments } = require('../controllers/documentController');
 const { getAllUsers, getAuthenticatedUserInfo, updateUserInfo, deleteUser } = require('../controllers/userController');
 // const { getAllRoles, createRole } = require('../controllers/roleController');
 const passport = require('passport');
@@ -30,7 +30,9 @@ router.delete('/api/user/project/:id', passport.authenticate('jwt', {session: fa
 //DOCUMENT
 router.get('/api/user/project/:id/alldocuments', passport.authenticate('jwt', {session: false}), getAllProjectDocuments);
 router.get('/api/user/project/document/:id', passport.authenticate('jwt', {session: false}), getDocumentById);
+router.get('/api/alltemplates', passport.authenticate('jwt', {session: false}), getAllAdminDocuments);
 router.post('/api/user/project/:id/createdocument', passport.authenticate('jwt', {session: false}), createDocument);
+router.post('/api/user/project/:id/createdocument/:doctype', passport.authenticate('jwt', {session: false}), createDocumentByTemplate);
 router.patch('/api/user/project/document/:id', passport.authenticate('jwt', {session: false}), updateDocument);
 router.delete('/api/user/project/document/:id', passport.authenticate('jwt', {session: false}), deleteDocument);
 
