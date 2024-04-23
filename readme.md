@@ -1,8 +1,48 @@
-# Первый запуск
+# Editor KazNIISA
 
-- 1 - запустить доккер 
-- 2 - ввести в терминал команду <p>`docker-compose up --build`</p>
-- 3 - ввести в терминал команду для миграции <p>`npx sequelize-cli db:migrate`</p>
-- 4 - ввести в терминал команду для сидов <p>`npx sequelize-cli db:seed:all`</p>
-- 5 - ввести в терминал команду для установки всех зависимостей <p>`npm i`</p>
-- 6 - ввести в терминал команду для запуска приложения <p>`npm run dev`</p>
+Веб приложение для редактирования документов и создание документов на основе шаблонов.
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/ArmanKalmakhambetov/editor_back_kazniisa.git
+```
+
+Go to the project directory
+
+```bash
+  cd editor_back_kazniisa
+```
+
+Install dependencies
+
+```bash
+  npm i
+```
+
+Build Docker
+
+```bash
+  docker-compose up --build
+```
+
+Run migrations
+
+```bash
+  npx sequelize-cli db:migrate
+```
+
+Run seeds
+
+```bash
+  npx sequelize-cli db:seed:all
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
